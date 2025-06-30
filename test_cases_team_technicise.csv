@@ -1,0 +1,242 @@
+Test Case ID,Title,Folder ID,Folder Path,State,Owner,Priority,Type of Test Case,Automation Status,Description,Preconditions,Template,Steps,Expected Result,Issues,Tags,Attachments,Created At,Created By,Last Updated At,Last Updated By,Project Name,Test Case URL
+TC-109,"Without doing Log in, product can be added to Cart",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"Without doing Log in, product can be added to Cart
+
+","1.  Web site is navigable
+2.  User is not logging in yet
+
+",Steps,"1.  The user is not logging in
+
+","Can see all the products of web site
+
+","","","",06/28/2025 07:46:13,Sonia Paul,06/28/2025 07:46:13,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465868
+,,,,,,,,,,,,"1.  However he or she is able to add the product to cart
+
+","Product is getting added to cart
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Without log in, product should not be added to cart
+
+","But the product is getting added to cart
+
+",,,,,,,,,
+TC-108,"There is no payment options, directly the order(s) is getting placed",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"There is no payment options, directly the order(s) is getting placed
+
+","1.  Web site must be navigable
+2.  Order has to be placed
+
+",Steps,"1.  User logged in with proper credentials
+
+","Log in done
+
+","","","",06/28/2025 07:26:29,Sonia Paul,06/28/2025 07:26:29,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465733
+,,,,,,,,,,,,"1.  Product which to buy gets chosen
+
+","It is in cart
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Then checkout happened
+
+","Done successfully
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Name, Address, Pincode were given
+
+","All input are accepted
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Click on \'Submit\' button
+
+","It directly redirects to Order placing message
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  There should be payment option
+
+","Without making payment, order is getting placed.
+
+",,,,,,,,,
+TC-107,Back button is not working properly,11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"Back button is not working properly. Say I clicked on Apple, then
+deselect it and then clicked on Samsung.
+
+Now If I do back, I should see the apple mobiles (the previous one) but
+it says \'No product(s) found\'
+
+","1.  Website is navigable
+2.  User logged in
+
+",Steps,"1.  Clicked on Apple option 1st
+
+","All Apple mobiles are shown
+
+","","","",06/28/2025 07:15:35,Sonia Paul,06/28/2025 07:15:35,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465480
+,,,,,,,,,,,,"1.  Then deselect it
+
+","Went for Samsung option
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Now if I do a \'back\'
+
+","It must show the Apple available phones but it is not showing.
+
+It says \'No product(s) are found\'.
+
+",,,,,,,,,
+TC-106,"When clicking on username rather than logout option, its logged out",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"When clicking on username rather than logout option, its logged out
+
+","1.  Web site must be navigable
+2.  User must be logged in
+
+",Steps,"1.  User must user proper username and password
+
+","So that log in is a success
+
+","","","",06/28/2025 07:08:56,Sonia Paul,06/28/2025 07:08:56,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465361
+,,,,,,,,,,,,"1.  Logout option along with the username , here \'demouser\' will come
+    up
+
+","Can get demouser and Logout option
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Upon clicking on \'demouser\'
+
+","The user is getting logged out which should not be.
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  We must click on \'Logout\'
+
+","It is getting logged out but on clicking on \'demouser\' also it is
+getting logged out.
+
+",,,,,,,,,
+TC-105," LOGOUT and the username , all are overlapping",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"LOGOUT and the username , all are overlapping
+
+","1.  Website must be navigable
+2.  User must logged in
+
+",Steps,"1.  User should do log in
+
+","Log in is successful
+
+","","","",06/28/2025 07:03:38,Sonia Paul,06/28/2025 07:03:38,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465350
+,,,,,,,,,,,,"1.  Logout option can be seen
+
+","Logout and the username, here \'demouser\' both are overlapping.
+
+",,,,,,,,,
+TC-104,Under 'Offers' getting 2 conflicting messages,11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"Under \'Offers\' getting 2 conflicting messages
+
+","Web site is navigable
+
+Offers option can be accessible
+
+",Steps,"Clicked on \'Offers\'
+
+","Sometimes it shows the message as \'This Offer is available in your
+City\'
+
+","","","",06/28/2025 06:46:19,Sonia Paul,06/28/2025 06:46:19,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465324
+,,,,,,,,,,,,"Clicked on \'Offers\'
+
+","Sometimes it shows \'This offer is not available in your city\'
+
+",,,,,,,,,
+TC-103,"Upon adding to favourites if want to add to cart, nothing happens",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"Upon adding to favourites if want to add to cart, nothing happens
+
+","Website is navigable
+
+could be added to favourites
+
+",Steps,"1.  The product is got added to favourites
+
+","It is being added fine
+
+","","","",06/28/2025 06:42:19,Sonia Paul,06/28/2025 06:42:19,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465224
+,,,,,,,,,,,,"1.  Then tried to add it to Cart
+
+","It is not happening, nothing happened.
+
+",,,,,,,,,
+TC-102,"Whatever products I had ordered, it was not showing under Orders",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"Whatever products I had ordered, it was not showing under Orders
+
+","1.  Web site is navigable
+2.  Log in with correct credentials
+
+",Steps,"1.  After doing log in, the products which are in my cart , tried to buy
+    it
+
+","Order was placed successfully
+
+","","","",06/28/2025 06:33:09,Sonia Paul,06/28/2025 06:33:09,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37465084
+,,,,,,,,,,,,"1.  When trying to see \'Orders\' tab
+
+","There were no Orders found
+
+",,,,,,,,,
+TC-101,Download Order Receipt does not work,11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"Download Order Receipt does not work
+
+","1.  Web site is navigable
+2.  Used proper demo log in
+
+",Steps,"1.  Did add to cart for some products
+
+","Products are being added to Cart
+
+","","","",06/28/2025 06:24:10,Sonia Paul,06/28/2025 06:24:10,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37464895
+,,,,,,,,,,,,"1.  Then did check out
+
+","All well
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Then gave name, address, pin etc
+
+","All were added fine
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  I got an order number
+
+","Its working
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Upon clicking on \'Download Order Receipt\'
+
+","Nothing happened
+
+",,,,,,,,,
+TC-100,i-Phone XR is not getting added to Cart,11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"i-Phone XR is not getting added to Cart
+
+","Web site must be navigable
+
+",Steps,"1.  Tried to add all the i-phones to cart
+
+","It was adding except one
+
+","","","",06/28/2025 06:14:25,Sonia Paul,06/28/2025 06:14:25,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37464742
+,,,,,,,,,,,,"1.  The i-phone XR could not be added to cart
+
+","It did not add to cart, price $499
+
+",,,,,,,,,
+TC-99,"When clicking on OnePlus, all other mobiles are also displaying ",11213058,New Folder,Active,Sonia Paul,Medium,Other,Not Automated,"When clicking on OnePlus, all other mobiles are also displaying. Like
+Samsung, google, i-phone
+
+","The website must be navigable
+
+",Steps,"1.  Clicked on Samsung option
+
+","Gave all the Samsung phones
+
+","","","",06/28/2025 06:07:03,Sonia Paul,06/28/2025 06:07:03,Sonia Paul,team_technicise,https://test-management.browserstack.com/projects/2069036/folder/11213058/test-cases/37464713
+,,,,,,,,,,,,"1.  Clicked on i-Phone option
+
+","Gave all the i-Phone mobiles
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  Clicked on Google
+
+","Gave all the Google mobiles
+
+",,,,,,,,,
+,,,,,,,,,,,,"1.  However when clicked on One Plus
+
+","Got all types of phone
+
+",,,,,,,,,
