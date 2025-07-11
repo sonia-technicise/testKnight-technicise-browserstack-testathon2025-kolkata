@@ -10,7 +10,26 @@ import runners.BstackRunner;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class test_login extends BstackRunner {
+public class NavigateToSigninAndLogin extends BstackRunner {
+
+    @Test
+    void loadingSigninPage() {
+        try {
+            driver.get("https://kolkata.bugbash.live");
+
+            WebElement signinBtn = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.id("Sign In")));
+            signinBtn.click();
+
+            wait.until(d -> d.getCurrentUrl().contains("/signin"));
+
+            System.out.println("Navigate to signin page successful!");
+
+        } catch (Exception e) {
+            System.err.println("Navigate to signin page failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     @Test
     void loginTest() {
@@ -19,28 +38,28 @@ public class test_login extends BstackRunner {
 
             // 1. Click username dropdown
             WebElement selectControl = wait.until(ExpectedConditions.elementToBeClickable(
-                By.cssSelector("#username .css-yk16xz-control")));
+                    By.cssSelector("#username .css-yk16xz-control")));
             selectControl.click();
 
             // 2. Enter username and select
             WebElement searchInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.cssSelector("#username input")));
+                    By.cssSelector("#username input")));
             searchInput.sendKeys("demouser", Keys.ENTER);
 
             // 3. Click password dropdown
             WebElement passwordControl = wait.until(ExpectedConditions.elementToBeClickable(
-                By.cssSelector("#password .css-yk16xz-control")));
+                    By.cssSelector("#password .css-yk16xz-control")));
             passwordControl.click();
 
             // 4. Enter password
             WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(
-                By.cssSelector("#password input")));
-            passwordInput.sendKeys("testingisfun99");
+                    By.cssSelector("#password input")));
+            passwordInput.sendKeys("testingisfun99", Keys.ENTER);
 
             // 5. Locate and scroll to login button
             WebElement loginBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-btn")));
             ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].scrollIntoView({block: 'center'});", loginBtn);
+                    "arguments[0].scrollIntoView({block: 'center'});", loginBtn);
 
             // 6. Wait and click login
             wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
@@ -50,17 +69,15 @@ public class test_login extends BstackRunner {
             wait.until(d -> d.getCurrentUrl().contains("/"));
 
             // 8. Optional: Assert some success condition
-            assertTrue(driver.getCurrentUrl().contains("dashboard") ||
-                       driver.getPageSource().contains("Welcome") ||
-                       driver.getCurrentUrl().contains("bugbash"), "Login might have failed");
+            assertTrue(driver.getCurrentUrl().contains("dashboard")
+                    || driver.getPageSource().contains("Welcome")
+                    || driver.getCurrentUrl().contains("bugbash"), "Login might have failed");
 
             System.out.println("Login successful!");
 
         } catch (Exception e) {
             System.err.println("Login failed: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            driver.quit();
         }
     }
 }

@@ -47,7 +47,7 @@ public class BstackRunner {
                 capabilities
         );
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // wait for action
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @AfterEach

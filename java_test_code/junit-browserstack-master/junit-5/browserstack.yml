@@ -10,9 +10,9 @@ platforms:
     osVersion: Monterey
     browserName: Safari
     browserVersion: 15.6
-  - deviceName: iPhone 13
+  - deviceName: iPhone 13 Pro
     osVersion: 15
-    browserName: Chromium
+    browserName: safari
     deviceOrientation: portrait
 parallelsPerPlatform: 1
 browserstackLocal: true
