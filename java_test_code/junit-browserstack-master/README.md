@@ -8,4 +8,5 @@ This repo covers BrowserStack integration with the JUnit frameworks using Seleni
 * [JUnit 5](https://github.com/browserstack/junit-browserstack/blob/master/junit-5/README.md)  
 
 Build command : `mvn install` or `mvn clean install`
+
 Run command : `mvn test -Dtest=File_name`  change the file name here
