@@ -1,19 +1,19 @@
-userName: atanupandit_8mJu3S
-accessKey: X7XzzzZwz92EnyHanYzA
+userName: souviksur_BdYPN8
+accessKey: kyHyMxtvzSG4fhqpcX1b
 framework: junit5
 platforms:
   - os: Windows
     osVersion: 10
     browserName: Chrome
     browserVersion: 120.0
-  - os: OS X
-    osVersion: Monterey
-    browserName: Safari
-    browserVersion: 15.6
-  - deviceName: iPhone 13 Pro
-    osVersion: 15
-    browserName: safari
-    deviceOrientation: portrait
+  # - os: OS X
+  #   osVersion: Monterey
+  #   browserName: Safari
+  #   browserVersion: 15.6
+  # - deviceName: iPhone 13 Pro
+  #   osVersion: 15
+  #   browserName: safari
+  #   deviceOrientation: portrait
 parallelsPerPlatform: 1
 browserstackLocal: true
 buildName: Kolkata_bugbash_build
