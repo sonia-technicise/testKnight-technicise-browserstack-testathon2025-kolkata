@@ -1,10 +1,10 @@
 [percy] Notice: Percy collects CI logs to improve service and enhance your experience. These logs help us debug issues and provide insights on your dashboards, making it easier to optimize the product experience. Logs are stored securely for 30 days. You can opt out anytime with export PERCY_CLIENT_ERROR_LOGS=false, but keeping this enabled helps us offer the best support and features.
 [percy] Percy has started!
-[percy] Finalized build #10: https://percy.io/6841b7e7/web/Kolkata_bugbash-74bb0584/builds/41524950
+[percy] Finalized build #29: https://percy.io/6841b7e7/web/Kolkata_bugbash-74bb0584/builds/41526059
 [percy] Detected error for percy build
 [percy] Failure: Snapshot command was not called
 [percy] Failure Reason: Snapshot Command was not called. please check your CI for errors
 [percy] Suggestion: Try using percy snapshot command to take snapshots
 [percy] Refer to the below Doc Links for the same
 [percy] * https://www.browserstack.com/docs/percy/take-percy-snapshots/
-[percy] Build's CLI and CI logs sent successfully. Please share this log ID with Percy team in case of any issues - 41524950_build_41524950_cli_5edf13008d1c1e20e47651089507a9945366dae5
+[percy] Build's CLI and CI logs sent successfully. Please share this log ID with Percy team in case of any issues - 41526059_build_41526059_cli_9182e89ab53b1b2a39dac051d1f246111e1df7cb
