@@ -1,4 +1,5 @@
 # testKnight-technicise-browserstack-testathon2025-kolkata
 
 
-- To Setup Java project, follow this issue https://github.com/sonia-technicise/testKnight-technicise-browserstack-testathon2025-kolkata/issues/2
+- For local Setup, follow this issue https://github.com/sonia-technicise/testKnight-technicise-browserstack-testathon2025-kolkata/issues/3
+- For BrowserStack SDK Setup, follow this issue https://github.com/sonia-technicise/testKnight-technicise-browserstack-testathon2025-kolkata/issues/2
