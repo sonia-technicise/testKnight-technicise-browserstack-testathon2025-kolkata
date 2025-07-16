@@ -21,14 +21,16 @@ public class AddSamsungProduct extends BstackRunner {
 
         try {
             driver.get("https://kolkata.bugbash.live");
+            System.out.println("-> Website homepage loaded.");
+            Thread.sleep(2000);
 
             // Click the Samsung filter
             System.out.println("Filtering by the 'Samsung' vendor type...");
             WebElement samsungFilter = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//span[text()='Samsung']")));
             samsungFilter.click();
-            Thread.sleep(2000); // Give time for filter to apply
             System.out.println("-> Clicked on 'Samsung' filter.");
+            Thread.sleep(3000); // Give time for filter to apply
 
             // Find all product cards
             List<WebElement> products = driver.findElements(By.className("shelf-item"));
@@ -47,6 +49,7 @@ public class AddSamsungProduct extends BstackRunner {
             if (!productFound) {
                 throw new RuntimeException("Product '" + productNameToFind + "' not found on the page.");
             }
+            Thread.sleep(3000);
 
             // Close the floating cart
             System.out.println("Attempting to close the floating cart...");

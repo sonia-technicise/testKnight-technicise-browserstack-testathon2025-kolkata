@@ -10,52 +10,43 @@ import runners.BstackRunner;
 import java.time.Duration;
 import java.util.List;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class CheckoutTest extends BstackRunner {
 
     @Test
-    @Order(1)
-    void testOpenWebsite() {
-        try {
-            System.out.println("[Test 1] Opening the website...");
-            driver.get("https://kolkata.bugbash.live/");
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.className("filters")));
-            System.out.println("-> Website's homepage loaded successfully.");
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to open website: " + e.getMessage(), e);
-        }
-    }
-
-    @Test
-    @Order(2)
     void testCheckoutFlow() {
         try {
-            System.out.println("\n[Test 2] Starting checkout flow...");
+            System.out.println("\n[Test] Starting checkout flow...");
             driver.get("https://kolkata.bugbash.live/");
             WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-            // Sign In
+            // ---- Sign In ----
             driver.findElement(By.id("Sign In")).click();
-            Thread.sleep(2000);
             System.out.println("-> Sign In page displayed.");
+            Thread.sleep(2000);
 
-            WebElement usernameDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='username']//div[text()='Select Username']")));
+            WebElement usernameDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[@id='username']//div[text()='Select Username']")));
             usernameDropdown.click();
-            Thread.sleep(1000);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'css-') and text()='demouser']"))).click();
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[contains(@class, 'css-') and text()='demouser']"))).click();
             System.out.println("-> Username 'demouser' selected.");
 
-            WebElement passwordDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='password']//div[text()='Select Password']")));
+            WebElement passwordDropdown = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[@id='password']//div[text()='Select Password']")));
             passwordDropdown.click();
-            Thread.sleep(1000);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, 'css-') and text()='testingisfun99']"))).click();
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[contains(@class, 'css-') and text()='testingisfun99']"))).click();
             System.out.println("-> Password 'testingisfun99' selected.");
 
             wait.until(ExpectedConditions.elementToBeClickable(By.id("login-btn"))).click();
             System.out.println("-> Login button clicked.");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
 
-            // Add product to cart
+            // ---- Add Product to Cart ----
             String productName = "Galaxy S20";
             wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("shelf-item")));
             List<WebElement> products = driver.findElements(By.className("shelf-item"));
@@ -74,25 +65,33 @@ public class CheckoutTest extends BstackRunner {
             if (!productFound) {
                 throw new RuntimeException("Product '" + productName + "' not found.");
             }
+            Thread.sleep(3000);
 
-            // Checkout flow
-            System.out.println("-> Attempting to checkout the items in the cart...");
+            // ---- Open Cart and Validate Product ----
+            System.out.println("-> Checking cart contents before checkout...");
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("float-cart--open")));
             List<WebElement> cartItems = driver.findElements(By.xpath("//div[contains(@class, 'float-cart__shelf-container')]//div[contains(@class, 'shelf-item')]"));
 
-            if (!cartItems.isEmpty()) {
-                try {
-                    WebElement checkoutBtn = driver.findElement(By.className("buy-btn"));
-                    checkoutBtn.click();
-                    System.out.println("-> Successfully clicked on the checkout button.");
-                } catch (Exception e) {
-                    throw new RuntimeException("Checkout button found but couldn't be clicked: " + e.getMessage(), e);
+            boolean productInCart = false;
+            for (WebElement item : cartItems) {
+                WebElement title = item.findElement(By.className("title"));
+                if (title.getText().trim().equalsIgnoreCase(productName)) {
+                    productInCart = true;
+                    System.out.println("Verified: '" + productName + "' is in the cart.");
+                    break;
                 }
-            } else {
-                System.out.println("-> No items found in the cart to checkout.");
             }
 
-            Thread.sleep(2000);
+            assertTrue(productInCart, "ERROR: '" + productName + "' was not found in the cart!");
+
+            // ---- Proceed to Checkout ----
+            if (productInCart) {
+                WebElement checkoutBtn = driver.findElement(By.className("buy-btn"));
+                checkoutBtn.click();
+                System.out.println("-> Successfully clicked on the checkout button.");
+            }
+
+            Thread.sleep(3000);
 
         } catch (Exception e) {
             throw new RuntimeException("Checkout flow failed: " + e.getMessage(), e);

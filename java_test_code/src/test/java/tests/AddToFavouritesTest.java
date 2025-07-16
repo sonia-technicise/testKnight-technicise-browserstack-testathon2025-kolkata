@@ -22,6 +22,7 @@ public class AddToFavouritesTest extends BstackRunner {
             driver.get("https://kolkata.bugbash.live/");
             wait.until(ExpectedConditions.presenceOfElementLocated(By.className("filters")));
             System.out.println("-> Homepage loaded.");
+            Thread.sleep(2000);
 
             // ---- Sign In flow ----
             WebElement signInBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("Sign In")));
@@ -31,6 +32,7 @@ public class AddToFavouritesTest extends BstackRunner {
             WebElement usernameDropdown = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[@id='username']//div[text()='Select Username']")));
             usernameDropdown.click();
+            Thread.sleep(2000);
             WebElement usernameOption = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[contains(@class, 'css-') and text()='demouser']")));
             usernameOption.click();
@@ -38,14 +40,15 @@ public class AddToFavouritesTest extends BstackRunner {
             WebElement passwordDropdown = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[@id='password']//div[text()='Select Password']")));
             passwordDropdown.click();
+            Thread.sleep(2000);
             WebElement passwordOption = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[contains(@class, 'css-') and text()='testingisfun99']")));
             passwordOption.click();
 
             WebElement loginBtn = driver.findElement(By.id("login-btn"));
             loginBtn.click();
-            Thread.sleep(2000);
             System.out.println("-> Logged in successfully.");
+            Thread.sleep(3000);
 
             // ---- Add to Favourites ----
             String productNameToFind = "iPhone 12 Mini";
@@ -69,12 +72,29 @@ public class AddToFavouritesTest extends BstackRunner {
                 throw new RuntimeException("Product '" + productNameToFind + "' not found on the page.");
             }
 
-            Thread.sleep(2000);
+            Thread.sleep(3000);
 
+            // ---- Go to Favourites and Verify ----
             WebElement favPageBtn = driver.findElement(By.id("favourites"));
             favPageBtn.click();
-            Thread.sleep(2000);
             System.out.println("-> Navigated to the Favourites page.");
+            Thread.sleep(3000);
+
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("shelf-item")));
+            List<WebElement> favProducts = driver.findElements(By.className("shelf-item"));
+
+            boolean isInFavList = false;
+            for (WebElement fav : favProducts) {
+                WebElement title = fav.findElement(By.className("shelf-item__title"));
+                if (title.getText().equalsIgnoreCase(productNameToFind)) {
+                    isInFavList = true;
+                    System.out.println("Verified: '" + productNameToFind + "' is present in the Favourites list.");
+                    break;
+                }
+            }
+
+            // Assertion to fail the test if product not found in favourites
+            assertTrue(isInFavList, "ERROR: '" + productNameToFind + "' was not found in the Favourites list.");
 
         } catch (Exception e) {
             throw new RuntimeException("Favourites flow failed: " + e.getMessage(), e);

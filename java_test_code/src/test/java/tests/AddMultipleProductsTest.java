@@ -57,6 +57,8 @@ public class AddMultipleProductsTest extends BstackRunner {
                     System.out.println("Product '" + productName + "' not found on the page.");
                 }
 
+                Thread.sleep(2000);
+
                 // Close floating cart
                 System.out.println("Attempting to close the floating cart...");
                 try {

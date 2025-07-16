@@ -14,6 +14,9 @@ platforms:
   #   osVersion: 15
   #   browserName: safari
   #   deviceOrientation: portrait
+  # - browserName: safari
+  #   osVersion: 18
+  #   deviceName: iPhone 16 Pro
 parallelsPerPlatform: 1
 browserstackLocal: true
 buildName: Kolkata_bugbash_build
